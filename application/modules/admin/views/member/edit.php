@@ -24,8 +24,8 @@ $this->zea->addInput('password','password');
 
 $this->zea->addInput('user_role_id','dropdown');
 $this->zea->setLabel('user_role_id','Level');
+$this->zea->removeNone('user_role_id');
 $this->zea->tableOptions('user_role_id','user_role','id','title','level > 2');
-
 
 $this->zea->startCollapse('username','User Detail');
 $this->zea->endCollapse('user_role_id');

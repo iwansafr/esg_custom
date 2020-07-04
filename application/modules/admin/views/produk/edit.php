@@ -8,6 +8,11 @@ if(!empty($user))
 	$form->setTable('produk');
 
 	$form->setId($id);
+	if(!empty($id))
+	{
+		$where = ' AND user_id = '.$user['id'];
+		$form->setWhere($where);
+	}
 	$form->addInput('nama','text');
 	$form->setLabel('nama','Nama*');
 	$form->addInput('deskripsi','textarea');
@@ -44,5 +49,10 @@ if(!empty($user))
 
 	$form->setRequired(['nama']);
 
-	$form->form();
+	if(empty($form->getData()) && !empty($id))
+	{
+		msg('Maaf Sepertinya URL yang sedang anda akses tidak valid, silahkan periksa kembali','danger');
+	}else{
+		$form->form();
+	}
 }

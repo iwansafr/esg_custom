@@ -17,6 +17,12 @@ class Member extends CI_Controller
 	{
 		$this->load->view('index');
 	}
+
+	public function clear_list()
+	{
+		$this->load->view('member/index');
+	}
+
 	public function edit()
 	{
 		$id = !empty($_GET['id']) ? intval($_GET['id']) : 0;

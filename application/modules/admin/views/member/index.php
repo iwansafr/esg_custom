@@ -47,5 +47,6 @@ $form->setEditLink('member/edit?id=');
 
 $form->setEnableDeleteParam(false);
 $form->setNumbering(true);
+$form->setUrl('admin/member/clear_list');
 
 $form->form();
